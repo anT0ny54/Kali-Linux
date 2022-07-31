@@ -73,6 +73,7 @@ RUN	echo 'Installing base files, this may take a few minutes...' && \
 	novnc \
 	ffmpeg \
 	dnsutils \
+	python3-pip \
 	pluma
 	
 #Install Websockify To Run Novnc
@@ -94,10 +95,9 @@ RUN echo 'Installing additional packages...' && \
 	pip install pyfunceble && \
 #TimeZone
 	ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
-	echo $TZ > /etc/timezone && \
 #NoVNC
 	cp /usr/share/novnc/vnc.html /usr/share/novnc/index.html && \
-	openssl req -new -newkey rsa:4096 -days 36500 -nodes -x509 -subj "/C=IN/ST=Maharastra/L=Private/O=Dis/CN=www.google.com" -keyout /etc/ssl/novnc.key  -out /etc/ssl/novnc.cert
+	openssl req -new -newkey rsa:4096 -days 36500 -nodes -x509 -subj "/C=IN/ST=Rastra/L=Private/O=Dis/CN=google.com" -keyout /etc/ssl/novnc.key  -out /etc/ssl/novnc.cert
 ENTRYPOINT ["supervisord", "-l", "/app/supervisord.log", "-c"]
 EXPOSE 22000/tcp
 
