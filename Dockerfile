@@ -1,4 +1,4 @@
-FROM kalilinux/kali-last-snapshot
+FROM kalilinux/kali-rolling
 
 LABEL AboutImage "Kali_Linux_Novnc"
 
