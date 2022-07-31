@@ -1,4 +1,4 @@
-FROM kalilinux/kali
+FROM kalilinux/kali-last-snapshot
 
 LABEL AboutImage "Kali_Linux_Novnc"
 
